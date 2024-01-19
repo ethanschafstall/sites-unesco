@@ -10,3 +10,7 @@ li {
   display: inline;
   list-style-type: none;
 }
+#map{
+  width: 50%;
+  height: 50vh;
+}
