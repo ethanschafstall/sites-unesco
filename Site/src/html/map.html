@@ -22,9 +22,33 @@
       </ul>
     </nav>
     <main>
-      <div id="map"></div>
-      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-      <script src="../javascript/scriptMap.js"></script>
+      <div id="map">
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script type="module" src="../javascript/scriptMap.mjs"></script>
+      </div>
+      <div class="heading">
+        <h1>Unesco Sites</h1>
+    </div>
+    <script src="../javascript/scriptTable.js"></script>
+    <div class="outer-wrapper">
+        <div class="table-wrapper">
+            <table id = heritageTable>
+                <thead>
+                    <th col-index=1>Site Name</th>
+                    <th col-index=2>Continent</th>
+                    <th col-index=3>Country</th>
+                    <th col-index=4>Type</th>
+                    <th col-index=5>Entry Date</th>
+                    <!-- Les colonnes sont ici -->
+                </thead>
+                <tbody>
+                    <!-- Les données seront ici -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
     </main>
     <footer>
       <p>2024 © Sites Unesco | All Rights Reserved</p>
