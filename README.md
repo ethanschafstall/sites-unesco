@@ -11,9 +11,8 @@ Explore UNESCO World Heritage Sites on an interactive map. Each site is marked w
 ### 2. Filtering Functionality
 
 Filter UNESCO sites based on different criteria:
-- By country
-- By continent
-- By the number of visits
+- By country and/or continent
+- By the type of site (natural, cultural, mixed)
 - And more! Tailor your exploration based on your preferences.
 
 ### 3. Account Functionality
@@ -25,3 +24,4 @@ Create a personalized account to enhance your experience:
 - Mark sites as favorites
 - Keep track of your UNESCO site journey
 
+# How To Use
