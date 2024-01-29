@@ -7,7 +7,7 @@ import { allMarkUnesco } from "./scriptMarker.mjs";
 
 // Map parameters (starting position, zoom amount).
 let mapOptions = {
-    center:[51.958, 9.141],
+    center:[46.5197, 6.6323],
     zoom:10
 }
 
