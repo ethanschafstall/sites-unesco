@@ -26,6 +26,6 @@ Create a personalized account to enhance your experience:
   
 # Links
 
-https://etml.icescrum.com/p/L426PROJET/#/project
+- [IceScrum](https://etml.icescrum.com/p/L426PROJET/#/project)
 
 
