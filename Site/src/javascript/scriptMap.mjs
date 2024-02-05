@@ -26,7 +26,7 @@ navigator.geolocation.getCurrentPosition(
         //Objet map pour la creer
         let map = new L.map('map', mapOptions);
 
-        // ajout d'une couche a la carte
+        // ajout d'une couche(layer) a la carte
         let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
         map.addLayer(layer);
         
