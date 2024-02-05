@@ -19,38 +19,68 @@
 <body>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <!-- Ajoutez un chemin vers votre fichier de logo dans l'attribut src -->
-<header>
-  <img src="https://w7.pngwing.com/pngs/782/217/png-transparent-unesco-hd-logo-thumbnail.png" alt="Logo">
-  <nav>
-    <ul>
-      <li><a href="../../index.html">Accueil</a></li>
-      <li><a href="map.html">Carte</a></li>
-    </ul>
-  </nav>
-</header>
-<form action="/action_page.php">
-  <select id="Pays" name="Pays">
-    <option value="volvo">Pays</option>
-    <option value="as">as</option>
-    <option value="as">as</option>
-    <option value="as">as</option>
-  </select>
-  <select id="Continent" name="Continent">
-    <option value="as">Continent</option>
-    <option value="as">as</option>
-    <option value="as">as</option>
-    <option value="as">as</option>
-  </select>
-  <select id="Continent" name="Continent">
-    <option value="as">Continent</option>
-    <option value="as">as</option>
-    <option value="as">as</option>
-    <option value="as">as</option>
-  </select>
-</form> 
+  <header>
+    <img src="/src/img/BSI_Logo.png" alt="Logo">
+    <nav>
+      <ul>
+        <li><a href="../../index.html">Accueil</a></li>
+        <li><a id="carte" href="/src/html/map.html">Carte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Voici les différents site de l'UNESCO</h1>
+  <form>
+    <select class="filter" id="Pays" name="Pays">
+      <option value="volvo">Pays</option>
+      <option value="as">as</option>
+      <option value="as">as</option>
+      <option value="as">as</option>
+    </select>
+    <select class="filter" id="Continent" name="Continent">
+      <option value="as">Continent</option>
+      <option value="as">as</option>
+      <option value="as">as</option>
+      <option value="as">as</option>
+    </select>
+    <select class="filter" id="Type" name="Type">
+      <option value="as">Type</option>
+      <option value="as">as</option>
+      <option value="as">as</option>
+      <option value="as">as</option>
+    </select>
+  </form>
   <div id="map"></div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="../javascript/scriptMap.js"></script>
 </body>
 
+<footer class="footer">
+  <div class="container">
+      <div class="footer-content">
+          <div class="footer-logo">
+              Logo
+          </div>
+          <div class="footer-links">
+              <ul class="footer-menu">
+                <li><a href="../../index.html">Accueil</a></li>
+                <li><a id="carte" href="/src/html/map.html">Carte</a></li>
+              </ul>
+          </div>
+          <div class="footer-social">
+              <ul class="social-icons">
+                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy; 2024 Mathis. All rights reserved.</p>
+      </div>
+  </div>
+</footer>
+
+</div>
 </html>
