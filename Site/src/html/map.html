@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-        <!--
+
+<head>
+  <!--
         Auteur              : Ethan Schafstall
         Date                : 15.01.2024
         Description         : Site Unesco pour I426
         -->
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-    <title>Map - Sites Unesco</title>
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="discover.html">Discover</a></li>
-        <li><a href="map.html">Map</a></li>
-        <li><a href="account.html">Account</a></li>
-      </ul>
-    </nav>
-    <main>
-      <div id="map">
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-        <script type="module" src="../javascript/scriptMap.mjs"></script>
-      </div>
-      <div class="heading">
-        <h1>Unesco Sites</h1>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <title>Map - Sites Unesco</title>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="discover.html">Discover</a></li>
+      <li><a href="map.html">Map</a></li>
+      <li><a href="account.html">Account</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div id="map">
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script type="module" src="../javascript/scriptMap.mjs"></script>
+    </div>
+    <div class="heading">
+      <h1>Unesco Sites</h1>
     </div>
     <script src="../javascript/scriptTable.js"></script>
     <div class="outer-wrapper">
-        <div class="table-wrapper">
-            <table id = heritageTable>
-                <thead>
-                    <th col-index=1>Site Name</th>
-                    <th col-index=2>Continent</th>
-                    <th col-index=3>Country</th>
-                    <th col-index=4>Type</th>
-                    <th col-index=5>Entry Date</th>
-                    <!-- Les colonnes sont ici -->
-                </thead>
-                <tbody>
-                    <!-- Les données seront ici -->
-                </tbody>
-            </table>
-        </div>
+      <div class="table-wrapper">
+        <table id=heritageTable>
+          <thead>
+            <th col-index=1>Nom du site</th>
+            <th col-index=2>Continent</th>
+            <th col-index=3>Pays</th>
+            <th col-index=4>Catégorie</th>
+            <th col-index=5>date d'entrée</th>
+            <!-- Les colonnes sont ici -->
+          </thead>
+          <tbody>
+            <!-- Les données seront ici -->
+          </tbody>
+        </table>
+      </div>
     </div>
-
+    <div>   
+      <button onclick="sortDataByProperty('site')">Trier par site</button> 
+      <button onclick="sortDataByProperty('region')">Trier par region</button>
+      <button onclick="sortDataByStates('states')">Trier par pays</button>
+      <button onclick="sortDataByProperty('category')">Trier par catégorie</button>
+      <button onclick="sortDataByProperty('date_inscribed')">Trier par date d'entrée</button>
+    </div>
     <script src="script.js"></script>
-    </main>
-    <footer>
-      <p>2024 © Sites Unesco | All Rights Reserved</p>
-    </footer>
-  </body>
+  </main>
+  <footer>
+    <p>2024 © Sites Unesco | All Rights Reserved</p>
+  </footer>
+</body>
+
 </html>
