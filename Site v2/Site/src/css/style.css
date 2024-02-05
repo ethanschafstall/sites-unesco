@@ -1,0 +1,74 @@
+/* style.css */
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #9BBCD3;
+}
+
+header {
+  background-color: #9BBCD3;
+  color: #a80000;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  max-width: 50px; /* Ajustez la largeur maximale de votre logo */
+}
+
+nav {
+  border-bottom: 2px solid #d2d0e6; /* Ajout de la bordure inférieure rouge au niveau du nav */
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #b80103;
+  position: relative;
+}
+
+nav a:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #d2d0e6;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#map {
+  flex: 1;
+  width: 96%;
+  height: 60%;
+  position: absolute;
+  bottom: 4%;
+  left: 2%;
+  border-radius: 1%;
+
+  /* Ajoutez d'autres styles au besoin */
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 60%;
+    bottom: 0vh;
+    left: 0;
+    border-radius: 0;
+  }
+}
