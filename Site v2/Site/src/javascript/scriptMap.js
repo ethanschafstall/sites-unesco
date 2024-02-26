@@ -196,6 +196,17 @@ const allCountries = [eruopeCountries, asiaCountries, americaCountries, africaCo
 const regionList = ["Africa", "Arab States", "Asia and the Pacific", "Europe and North America", "Latin America and the Caribbean"]
 
 const continentsList = [["Europe","Europe"], ["America","Amérique"], ["Asia", "Asie"], ["Oceania", "Océanie"], ["Africa", "Afrique"]]
+let countriesList = []
+completeList = (countries, countriesList) => {
+    countries.forEach((country) => {
+        country.forEach((el) => {
+            countriesList.push(el)
+            //console.log(el)
+        })
+    }) 
+}
+completeList(allCountries, countriesList)
+
 const BTN_ALL_MARK = document.querySelector('.btnAllMarks') 
 const BTN_REMOVE_MARK = document.querySelector('.btnRemove')
 
@@ -210,6 +221,7 @@ let mapOptions = {
     center: [latitude, longitude],
     zoom: zoomMap,
 }
+
 //Objet map pour la creer
 let map = new L.map('map', mapOptions);
 
@@ -221,7 +233,7 @@ map.addLayer(layer);
 let marker = new L.Marker([latitude, longitude]);
 
 // Ajoute le marqueur
-marker.addTo(map);
+//marker.addTo(map);
 
 //Basic Functions 
 CreatMarker = (latitude, longitude, nameSite) => {
@@ -231,7 +243,7 @@ CreatMarker = (latitude, longitude, nameSite) => {
     marksList.push(newMarker);
 }
 ZoomArea = (latitude, longitude, zoomNumber) => {
-    map.setView([latitude, longitude], zoomMap)
+    map.setView([latitude, longitude], zoomNumber)
 }
 
 // demande de la localisation au navigateur
@@ -244,7 +256,7 @@ navigator.geolocation.getCurrentPosition(
         longitude = position.coords.longitude;
         console.log(`latitude1 :${latitude}`);
         console.log(`longitude1 :${longitude}`);
-        ZoomArea(latitude, longitude, zoomMap);
+        ZoomArea(latitude, longitude, 6);
     },
     function (error) {
         // Gérer les erreurs de géolocalisation ici
@@ -340,6 +352,13 @@ function markSpotsByCountries (countriesName) {
         })        
     })
 }
+function markSpotsByCountry (countryName) {
+    dataUnescoComplet.forEach((elements) => {
+            if (elements.states == (countryName)){
+                CreatMarker(elements.coordinates.lat, elements.coordinates.lon, elements.site)
+            }                
+    })
+}
 
 //Exportacion de la base de datos
 async function getInfo(){
@@ -386,4 +405,37 @@ filterContinent.addEventListener('keyup',(e)=>{
     }
 })
 
+
+//FILERS BY COUNTRY
+const filterCountry = document.getElementById('searchCountry')
+const options2 = document.getElementsByClassName('option2')
+
+let filterOptionsCountries = (data) => {
+    let body=''
+    for(let i=0;i<data.length;i++){
+        //body += `<tm><button onclick="country${data[i]}()" class="option2" id="${data[i]}">${data[i]}</button></tm>`        
+        body += `<tm><button onclick="countryButton(this, ${data[i]})" class="option2" id="${data[i]}">${data[i]}</button></tm>`        
+    }
+    document.querySelector('.data2').innerHTML = body
+}
+filterOptionsCountries(countriesList);
+filterCountry.addEventListener('keyup',(e)=>{
+    let text = e.target.value
+    let er = new RegExp(text, "i")
+    for(let i=0; i<options2.length; i++){
+        let answ=options2[i]
+        if(er.test(answ.innerText)){
+            answ.classList.remove("hide")
+            console.log(answ)     
+        }
+        else{
+            answ.classList.add("hide")
+        }       
+    }
+})
+
+function countryButton(obj, name) {
+   removeMarks();
+   markSpotsByCountry(obj.id);
+}
      
