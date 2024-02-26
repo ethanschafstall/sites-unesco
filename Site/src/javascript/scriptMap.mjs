@@ -20,7 +20,8 @@ navigator.geolocation.getCurrentPosition(
         // option de centre de la carte + zoom
         let mapOptions = {
             center: [latitude, longitude],
-            zoom: 10
+            zoom: 10,
+           
         }
 
         //Objet map pour la creer
