@@ -3,19 +3,44 @@
 // Date : 15.01.2024
 // Description : Map functionality code
 
-import { allMarkUnesco } from "./scriptMarker.mjs";
+// latitude de l'utilisateur
+let latitude = 0;
+// longitude du user
+let longitude = 0;
+// demande de la localisation au navigateur
+navigator.geolocation.getCurrentPosition(
+    // obtention des positions
+    function (position) {
+        // obtention de la latitude
+        latitude = position.coords.latitude;
+        // obtention logitude
+        longitude = position.coords.longitude;
+        console.log(`latitude1 :${latitude}`);
+        console.log(`longitude1 :${longitude}`);
+        // option de centre de la carte + zoom
+        let mapOptions = {
+            center: [latitude, longitude],
+            zoom: 10,
+           
+        }
 
-// Map parameters (starting position, zoom amount).
-let mapOptions = {
-    center:[46.5197, 6.6323],
-    zoom:10
-}
+        //Objet map pour la creer
+        let map = new L.map('map', mapOptions);
 
-// Object for creating the map.
-const map = new L.map('map' , mapOptions);
+        // ajout d'une couche(layer) a la carte
+        let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        map.addLayer(layer);
+        
+        //met un marqueur sur la map avec les coordinees
+        let marker = new L.Marker([latitude, longitude]);
 
-// The different layers of the map.
-let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-map.addLayer(layer);
-
-allMarkUnesco(map);
+        // Ajoute le marqueur
+        marker.addTo(map);
+    },
+    function (error) {
+        // Gérer les erreurs de géolocalisation ici
+        console.error("Erreur de géolocalisation :", error.message);
+    },
+    // précision de la position
+    { enableHighAccuracy: true }
+);
