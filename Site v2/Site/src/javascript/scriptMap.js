@@ -203,11 +203,12 @@ const BTN_REMOVE_MARK = document.querySelector('.btnRemove')
 let latitude = 0;
 // longitude du user
 let longitude = 0;
+let zoomMap= 10;
 
 // option de centre de la carte + zoom
 let mapOptions = {
     center: [latitude, longitude],
-    zoom: 4,
+    zoom: zoomMap,
 }
 //Objet map pour la creer
 let map = new L.map('map', mapOptions);
@@ -230,7 +231,7 @@ CreatMarker = (latitude, longitude, nameSite) => {
     marksList.push(newMarker);
 }
 ZoomArea = (latitude, longitude, zoomNumber) => {
-    map.setView([latitude, longitude], 13)
+    map.setView([latitude, longitude], zoomMap)
 }
 
 // demande de la localisation au navigateur
@@ -243,7 +244,7 @@ navigator.geolocation.getCurrentPosition(
         longitude = position.coords.longitude;
         console.log(`latitude1 :${latitude}`);
         console.log(`longitude1 :${longitude}`);
-        ZoomArea(latitude, longitude, 6);
+        ZoomArea(latitude, longitude, zoomMap);
     },
     function (error) {
         // Gérer les erreurs de géolocalisation ici

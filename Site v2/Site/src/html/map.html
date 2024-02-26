@@ -6,8 +6,8 @@
         Auteur              : Ethan Schafstall
         Date                : 15.01.2024
         Description         : Site Unesco pour I426
-        Modification        : Philippe Heijkoop
-        Date                : 22.01.2024
+        Modification        : Mathis Botteau
+        Date                : 26.02.2024
         -->
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="../css/style.css">
@@ -27,25 +27,30 @@
       </ul>
     </nav>
   </header>
-  <button class = "btnRemove">Remove Sites</button>
-  <button class = "btnAllMarks">All Sites</button>
-  <tr>
-    <input id="searchContinent" class="filter" type="text" placeholder="Continents...">
-    <table>
-        <thead>
-            <th>Continents</th>
-        </thead>
-        <tbody class="data">
-        </tbody>
-    </table>
-</tr>
- 
 
   <h1>Voici les différents site de l'UNESCO</h1>
-  
+
+  <div class="filter-container">
+    <div class="filter-buttons">
+      <button class="btnRemove">Remove Sites</button>
+      <button class="btnAllMarks">All Sites</button>
+      <input id="searchContinent" class="filter" type="text" placeholder="Continents...">
+      </select>
+    </div>
+
+    <table>
+      <thead>
+        <th>Continents :</th>
+      </thead>
+      <tbody class="data">
+      </tbody>
+    </table>
+  </div>
+
   <div id="map"></div>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="../javascript/scriptMap.js"></script>
 </body>
-</div>
+
 </html>
