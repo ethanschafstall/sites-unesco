@@ -1,7 +1,0 @@
-# Lines starting with '#' are comments.
-# Each line is a file pattern followed by one or more owners.
-# the repo. Unless a later match takes precedence,
-
-# @ethanschafstall , @philippe-hjik and @termimi will be requested for
-# review when someone opens a pull request.
-*       @ethanschafstall @philippe-hjik @termimi
