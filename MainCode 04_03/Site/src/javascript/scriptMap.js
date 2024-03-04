@@ -193,11 +193,9 @@ const oceaniaCountries= [
 ]
 const allCountries = [eruopeCountries, asiaCountries, americaCountries, africaCountries, oceaniaCountries]
 
-//Category list
-const categoryList = ["Cultural", "Natural", "Mixed"]
 //Region List
 const regionList = ["Africa", "Arab States", "Asia and the Pacific", "Europe and North America", "Latin America and the Caribbean"]
-//Continents list
+
 const continentsList = [["Europe","Europe"], ["America","Amérique"], ["Asia", "Asie"], ["Oceania", "Océanie"], ["Africa", "Afrique"]]
 let countriesList = []
 completeList = (countries, countriesList) => {
@@ -211,14 +209,9 @@ completeList = (countries, countriesList) => {
 completeList(allCountries, countriesList)
 
 
-
-
 //Bottons
 const BTN_ALL_MARK = document.querySelector('.btnAllMarks') 
 const BTN_REMOVE_MARK = document.querySelector('.btnRemove')
-const BTN_CULTURAL = document.querySelector('.btnCultural')
-const BTN_NATURAL = document.querySelector('.btnNatural')
-const BTN_MIXED = document.querySelector('.btnMixed')
 
 // latitude de l'utilisateur
 let latitude = 0;
@@ -266,15 +259,6 @@ function removeMarks(){
 navigator.geolocation.getCurrentPosition(
     // obtention des positions
     function (position) {
-
-        $.getJSON('http://ws.geonames.org/countryCode', {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-            type: 'JSON'
-        }, function(result) {
-            console.log(result.countryName);
-        })
-
         // obtention de la latitude
         latitude = position.coords.latitude;
         // obtention logitude
@@ -294,16 +278,6 @@ navigator.geolocation.getCurrentPosition(
     { enableHighAccuracy: true }
    
 );
-
-navigator.geolocation.getCurrentPosition(function(position) {
-    $.getJSON('http://ws.geonames.org/countryCode', {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-        type: 'JSON'
-    }, function(result) {
-        alert(result.countryName);
-    });
-});
 
 
 
@@ -328,8 +302,6 @@ function continentOceania(){
     removeMarks();
     markSpotsByCountries(oceaniaCountries);
 }
-
-// Functions basic by buttons
 BTN_ALL_MARK.addEventListener('click', () => {
     //getUnescoBasicInfo(); 
     removeMarks();
@@ -338,18 +310,6 @@ BTN_ALL_MARK.addEventListener('click', () => {
 })
 BTN_REMOVE_MARK.addEventListener('click', () => {
     removeMarks();
-})
-BTN_CULTURAL.addEventListener('click',() => {
-    removeMarks();
-    markSpotsByCategory("Cultural")
-})
-BTN_NATURAL.addEventListener('click',() => {
-    removeMarks();
-    markSpotsByCategory("Natural")
-})
-BTN_MIXED.addEventListener('click',() => {
-    removeMarks();
-    markSpotsByCategory("Mixed")
 })
 
 //Functions Filter -----------------------------------------------
@@ -401,13 +361,6 @@ function markSpotsByCountries (countriesName) {
 function markSpotsByCountry (countryName) {
     dataUnescoComplet.forEach((elements) => {
             if (elements.states == (countryName)){
-                CreatMarker(elements.coordinates.lat, elements.coordinates.lon, elements.site)
-            }                
-    })
-}
-function markSpotsByCategory (categoryOption) {
-    dataUnescoComplet.forEach((elements) => {
-            if (elements.category == categoryOption){
                 CreatMarker(elements.coordinates.lat, elements.coordinates.lon, elements.site)
             }                
     })
