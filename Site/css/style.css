@@ -68,7 +68,10 @@ form{
   gap: 24px;
   margin-bottom: 24px;
 }
-
+footer{
+  display: flex;
+  justify-content: center;
+}
 /*
 #map {
   width: 96%;
