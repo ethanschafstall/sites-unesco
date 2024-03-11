@@ -1,0 +1,163 @@
+/* style.css */
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #9BBCD3;
+ font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+header {
+  background-color: #9BBCD3;
+  color: #a80000;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  max-width: 5px; /* Ajustez la largeur maximale de votre logo */
+}
+
+nav {
+  border-bottom: 2px solid #d2d0e6; /* Ajout de la bordure inférieure rouge au niveau du nav */
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #b80103;
+  position: relative;
+  
+}
+
+nav a:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #d2d0e6;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#map {
+  flex: 1;
+  width: 96%;
+  height: 60%;
+  position: absolute;
+  bottom: 4%;
+  left: 2%;
+  border-radius: 1%;
+
+  /* Ajoutez d'autres styles au besoin */
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 60%;
+    bottom: 0vh;
+    left: 0;
+    border-radius: 0;
+  }
+}
+
+
+
+div, img, h1,p,button{
+
+ display:inline;
+ font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ color:#31332b
+}
+.firstdiv{
+
+display:grid;
+grid-template-areas: "h1 img" "p img" "button img";
+}
+.firstdiv img{
+  grid-area: img;
+  margin:15px;
+  border:none;
+  border-color: #DFE2DB;
+}
+.firstdiv h1{
+  grid-area: h1;
+align-self: end;
+text-align: center;
+}
+.firstdiv p{
+  grid-area: p;
+  margin:5%;
+  font-size: larger;
+}
+.firstdiv button{
+  grid-area: button;
+  width: 100px;
+  height: 40px;
+  margin:50px;
+ /* DETTE TECHNIQUE
+ /*justify-self: end;*/
+ align-self: flex-start;
+}
+nav ul li {
+ margin: auto 15px;
+  font-size: larger;
+
+}
+nav ul li img {
+  width: 4%;
+  height: auto;
+  padding: 0px;
+  border: none;
+}
+footer{
+  margin: auto;
+}
+
+/*
+.seconddiv{
+  margin-left:50px;
+  margin-right: 50px;
+  display:grid;
+  grid-template-areas: "title2 title2 title2 title2" "div1 div2 div3 div4" "div1 div2 div3 div4" "div1 div2 div3 div4" "div1 div2 div3 div4";
+  }
+.seconddiv img {
+  display:block;
+  width: 100px;
+  height: 100px;
+}
+.seconddiv h2{
+  grid-area: title2;
+}
+.seconddiv img{
+   border:solid;
+  border-radius: 0,1px;
+  border-color: #DFE2DB;
+}
+.div1{
+  grid-area: div1;
+}
+.div2{
+  grid-area: div2;
+}
+.div3{
+  grid-area: div3;
+}
+.div4{
+  grid-area: div4;
+}*/
