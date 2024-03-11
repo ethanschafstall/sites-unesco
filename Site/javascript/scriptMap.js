@@ -42,14 +42,13 @@ const eruopeCountries = [
     'Montenegro',
     'North Macedonia',
     'Norway',
-    //'Russian Federation',
     'San Marino',
     'Serbia',
     'Ukraine', 
     'Isle of Man',
     'Faeroe Islands',
     'Gibraltar',
-    'Netherlands (Kingdom of the)'
+    'Netherlands (Kingdom of the)',
     ]
 const asiaCountries = [
     'Afghanistan',
@@ -84,7 +83,7 @@ const asiaCountries = [
     'Israel',
     'Bahrain',
     'Iraq',
-    'Jerusalem (Site proposed by Jordan)',
+    `Jerusalem (Site proposed by Jordan)`,
     'Jordan',
     'Lebanon',
     'Oman',
@@ -94,14 +93,14 @@ const asiaCountries = [
     'Syrian Arab Republic',
     'United Arab Emirates',
     'Yemen',
-    'Russian Federation'
+    'Russian Federation',
 ]
 const americaCountries = [
     'Antigua and Barbuda',
     'Argentina',
     'Barbados',
     'Belize',
-    'Bolivia (Plurinational State of)',
+    `Bolivia (Plurinational State of)`,
     'Brazil',
     'Chile',
     'Colombia',
@@ -124,9 +123,9 @@ const americaCountries = [
     'Saint Lucia',
     'Suriname',
     'Uruguay',
-    'Venezuela (Bolivarian Republic of)',
+    `Venezuela (Bolivarian Republic of)`,
     'United States of America',
-    'Canada'
+    'Canada',
 ]
 const africaCountries = [
     'Angola',
@@ -171,7 +170,7 @@ const africaCountries = [
     'Mauritania',
     'Morocco',
     'Sudan',
-    'Tunisia'
+    'Tunisia',
 ]
 const oceaniaCountries= [
     'Australia',
@@ -189,8 +188,191 @@ const oceaniaCountries= [
     'Nauru',
     'Tuvalu',
     'Tokelau',
-    'Solomon Islands'
+    'Solomon Islands',
 ]
+
+let countriesListFr = [
+    "Albanie",
+    "Andorre",
+    "Autriche",
+    "Biélorussie",
+    "Belgique",
+    `Bosnie-et-Herzégovine`,
+    "Bulgarie",
+    "Chypre",
+    "Tchécoslovaquie",
+    "Allemagne",
+    "Danemark",
+    "Estonie",
+    "Espagne",
+    "Finlande",
+    "France",
+    `Royaume-Uni et d'Irlande du Nord`,
+    "Grèce",
+    "Saint-Siège",
+    "Hongrie",
+    "Croatie",
+    "Irlande",
+    "Italie",
+    "Lituanie",
+    "Luxembourg",
+    "Lettonie",
+    "Malte",
+    "Pays-Bas",
+    "Pologne",
+    "Portugal",
+    "Roumanie",
+    "Suède",
+    "Slovénie",
+    "Slovaquie",
+    "Suisse",
+    "Islande",
+    "Liechtenstein",
+    "République de Moldavie",
+    "Monaco",
+    "Monténégro",
+    "Macédoine du Nord",
+    "Norvège",
+    "Saint-Marin",
+    "Serbie",
+    "Ukraine", 
+    "Île de Man",
+    "Îles Féroé",
+    "Gibraltar",
+    "Afghanistan",
+    "Azerbaïdjan",
+    "Bangladesh",
+    "Cambodge",
+    "Chine",
+    "République de Corée",
+    "Fidji",
+    "Inde",
+    "Indonésie",
+    "Iran",
+    "Japon",
+    "Kazakhstan",
+    "Kirghizstan",
+    "République de Lao",
+    "Malaisie",
+    "Mongolie",
+    "Myanmar",
+    "Népal",
+    "Pakistan",
+    "Philippines",
+    "République de Corée",
+    "Singapour",
+    "Sri Lanka",
+    "Tadjikistan",
+    "Thaïlande",
+    "Turkménistan",
+    "Ouzbékistan",
+    "Vanuatu",
+    "Viêt Nam",
+    "Israël",
+    "Bahreïn",
+    "Irak",
+    "Jérusalem",
+    "Jordanie",
+    "Liban",
+    "Oman",
+    "Qatar",
+    "Arabie saoudite",
+    "État de Palestine",
+    "République arabe Syrienne",
+    "Émirats arabes unis",
+    "Yémen",
+    "Fédération de Russie",
+    "Antigua-et-Barbuda",
+    "Argentine",
+    "Barbade",
+    "Belize",
+    "Bolivie",
+    "Brésil",
+    "Chili",
+    "Colombie",
+    "Costa Rica",
+    "Cuba",
+    "Dominique",
+    "République dominicaine",
+    "Équateur",
+    "El Salvador",
+    "Guatemala",
+    "Haïti",
+    "Honduras",
+    "Jamaïque",
+    "Mexique",
+    "Nicaragua",
+    "Panama",
+    "Paraguay",
+    "Pérou",
+    "Saint-Kitts-et-Nevis",
+    "Sainte-Lucie",
+    "Suriname",
+    "Uruguay",
+    `Venezuela (République bolivarienne du)`,
+    `États-Unis d'Amérique`,
+    "Canada",
+    "Angola",
+    "Bénin",
+    "Botswana",
+    "Burkina Faso",
+    "Cabo Verde",
+    "Cameroun",
+    "République centrafricaine",
+    "Tchad",
+    "Congo",
+    "Côte d'Ivoire",
+    "République démocratique du Congo",
+    "Érythrée",
+    "Éthiopie",
+    "Gabon",
+    "Gambie",
+    "Ghana",
+    "Guinée",
+    "Kenya",
+    "Lesotho",
+    "Madagascar",
+    "Malawi",
+    "Mali",
+    "Maurice",
+    "Mozambique",
+    "Namibie",
+    "Niger",
+    "Nigeria",
+    "Rwanda",
+    "Sénégal",
+    "Seychelles",
+    "Afrique du Sud",
+    "Togo",
+    "Ouganda",
+    `République-Unie de Tanzanie`,
+    "Zambie",
+    "Zimbabwe",
+    "Algérie",
+    "Égypte",
+    "Libye",
+    "Mauritanie",
+    "Maroc",
+    "Soudan",
+    "Tunisie",
+    "Australie",
+    "Papouasie-Nouvelle-Guinée",
+    "Nouvelle-Zélande",
+    "Fidji",
+    "Îles Salomon",
+    "Micronésie",
+    "Vanuatu",
+    "Samoa",
+    "Kiribati",
+    "Tonga",
+    "Îles Marshall",
+    "Palau",
+    "Nauru",
+    "Tuvalu",
+    "Tokelau",
+    `Îles Salomon`,
+]
+
 const allCountries = [eruopeCountries, asiaCountries, americaCountries, africaCountries, oceaniaCountries]
 
 //Category list
@@ -212,7 +394,6 @@ completeList(allCountries, countriesList)
 
 
 
-
 //Bottons
 const BTN_ALL_MARK = document.querySelector('.btnAllMarks') 
 const BTN_REMOVE_MARK = document.querySelector('.btnRemove')
@@ -221,35 +402,68 @@ const BTN_NATURAL = document.querySelector('.btnNatural')
 const BTN_MIXED = document.querySelector('.btnMixed')
 
 // latitude de l'utilisateur
-let latitude = 0;
+let latitude = 46.519653;
 // longitude du user
-let longitude = 0;
+let longitude = 6.632273;
 let zoomMap= 10;
 
 // option de centre de la carte + zoom
 let mapOptions = {
     center: [latitude, longitude],
-
     zoom: zoomMap,
 }
 //Objet map pour la creer
 let map = new L.map('map', mapOptions);
 
 // ajout d'une couche(layer) a la carte
-let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-map.addLayer(layer);
+//let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+//    noWrap: true,
+//});
 
+let tokenMap = "pbmI69D6upAibHDAfHg76Tb6M6X2iybDgDyxpQmkkDWnCMlVOb3iDZPZCkmNZKgO"
+let layer = new L.TileLayer(`https://tile.jawg.io/jawg-lagoon/{z}/{x}/{y}.png?lang=fr&access-token=${tokenMap}`,{
+    noWrap: true,
+});
+map.addLayer(layer);
 //met un marqueur sur la map avec les coordinees
-let marker = new L.Marker([latitude, longitude]);
+//let marker = new L.Marker([latitude, longitude]);
 
 // Ajoute le marqueur
 //marker.addTo(map);
 
+CreateIcon=(type) =>{
+    let newIcon = L.icon({
+        iconUrl: '../img/cultural_Icon.png',
+        iconSize: [10,10],
+        inconAnchor:[22,94]
+    })
+}
+
 //Basic Functions 
-CreatMarker = (latitude, longitude, nameSite) => {
-    let newMarker = new L.Marker ([latitude, longitude])
+CreatMarker = (latitude, longitude, nameSite, category, location) => {
+    let newIcon
+    if(category == "Cultural"){
+        newIcon = L.icon({
+            iconUrl: '../img/cultural_Icon.png',
+            iconSize: [28,65]
+        })
+    }
+    else if(category == "Natural"){
+        newIcon = L.icon({
+            iconUrl: '../img/natural_Icon.png',
+            iconSize: [28,65]
+        })
+    }
+    else{
+        newIcon = L.icon({
+            iconUrl: '../img/mixed_Icon.png',
+            iconSize: [28,65]
+        })
+    }
+    let newMarker = new L.Marker ([latitude, longitude], {icon:newIcon})
+    
     newMarker.addTo(map)
-    newMarker.bindPopup(nameSite)
+    newMarker.bindPopup(nameSite+"\<br\>"+"Il fait partie de : " + location)
     marksList.push(newMarker);
 }
 ZoomArea = (latitude, longitude, zoomNumber) => {
@@ -266,7 +480,6 @@ function removeMarks(){
 navigator.geolocation.getCurrentPosition(
     // obtention des positions
     function (position) {
-
         $.getJSON('http://ws.geonames.org/countryCode', {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
@@ -295,6 +508,8 @@ navigator.geolocation.getCurrentPosition(
    
 );
 
+
+/*
 navigator.geolocation.getCurrentPosition(function(position) {
     $.getJSON('http://ws.geonames.org/countryCode', {
         lat: position.coords.latitude,
@@ -304,7 +519,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
         alert(result.countryName);
     });
 });
-
+*/
 
 
 // Functions by Continents ----------------------------------------------
@@ -334,7 +549,6 @@ BTN_ALL_MARK.addEventListener('click', () => {
     //getUnescoBasicInfo(); 
     removeMarks();
     markAllUnescoSpots();
-    console.log("nice")
 })
 BTN_REMOVE_MARK.addEventListener('click', () => {
     removeMarks();
@@ -386,14 +600,14 @@ getUnescoBasicInfo();
 //Functions for put marks by type
 function markAllUnescoSpots () {
     dataUnescoComplet.forEach((elements)=> {
-        CreatMarker(elements.coordinates.lat, elements.coordinates.lon, elements.site)
+        CreatMarker(elements.coordinates.lat, elements.coordinates.lon, elements.site, elements.category, elements.states)
     })
 }
 function markSpotsByCountries (countriesName) {
     dataUnescoComplet.forEach((elements) => {
         countriesName.forEach((country)=>{
             if (elements.states == (country)){
-                CreatMarker(elements.coordinates.lat, elements.coordinates.lon, elements.site)
+                CreatMarker(elements.coordinates.lat, elements.coordinates.lon, elements.site, elements.category, elements.states)
             }
         })        
     })
@@ -401,14 +615,14 @@ function markSpotsByCountries (countriesName) {
 function markSpotsByCountry (countryName) {
     dataUnescoComplet.forEach((elements) => {
             if (elements.states == (countryName)){
-                CreatMarker(elements.coordinates.lat, elements.coordinates.lon, elements.site)
+                CreatMarker(elements.coordinates.lat, elements.coordinates.lon, elements.site, elements.category, elements.states)
             }                
     })
 }
 function markSpotsByCategory (categoryOption) {
     dataUnescoComplet.forEach((elements) => {
             if (elements.category == categoryOption){
-                CreatMarker(elements.coordinates.lat, elements.coordinates.lon, elements.site)
+                CreatMarker(elements.coordinates.lat, elements.coordinates.lon, elements.site, elements.category, elements.states)
             }                
     })
 }
@@ -431,7 +645,7 @@ async function getInfo(){
 
 //FUNCTIONS BY CONTINENTS
 //Reference to elements in HTML CONTINENTS
-const filterContinent = document.getElementById('searchContinent')
+//const filterContinent = document.getElementById('searchContinent')
 const options = document.getElementsByClassName('option')
 
 let filterOptionsContinent = (data) => {
@@ -442,7 +656,7 @@ let filterOptionsContinent = (data) => {
     document.querySelector('.data').innerHTML = body
 }
 filterOptionsContinent(continentsList);
-filterContinent.addEventListener('keyup',(e)=>{
+/*filterContinent.addEventListener('keyup',(e)=>{
     let text = e.target.value
     let er = new RegExp(text, "i")
     for(let i=0; i<options.length; i++){
@@ -457,7 +671,7 @@ filterContinent.addEventListener('keyup',(e)=>{
         }       
     }
 })
-
+*/
 //FILERS BY COUNTRY
 const filterCountry = document.getElementById('searchCountry')
 const options2 = document.getElementsByClassName('option2')
@@ -466,23 +680,29 @@ let filterOptionsCountries = (data) => {
     let body=''
     for(let i=0;i<data.length;i++){
         //body += `<tm><button onclick="country${data[i]}()" class="option2" id="${data[i]}">${data[i]}</button></tm>`        
-        body += `<tm><button onclick="countryButton(this, ${data[i]})" class="option2" id="${data[i]}">${data[i]}</button></tm>`        
+        body += `<tr><button onclick="countryButton(this, ${data[i]})" class="option2 hide" id="${data[i]}">${countriesListFr[i]}</button></tr>`        
     }
     document.querySelector('.data2').innerHTML = body
 }
-filterOptionsCountries(countriesList);
+
+//filterOptionsCountries(countriesList);
+
 filterCountry.addEventListener('keyup',(e)=>{
+    filterOptionsCountries(countriesList);
     let text = e.target.value
     let er = new RegExp(text, "i")
     for(let i=0; i<options2.length; i++){
         let answ=options2[i]
         if(er.test(answ.innerText)){
             answ.classList.remove("hide")
-            console.log(answ)     
         }
         else{
             answ.classList.add("hide")
         }       
+        if(er.test("")){
+            answ.classList.add("hide")
+        }
+
     }
 })
 
