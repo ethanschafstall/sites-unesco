@@ -48,7 +48,7 @@ const eruopeCountries = [
     'Isle of Man',
     'Faeroe Islands',
     'Gibraltar',
-    'Netherlands (Kingdom of the)',
+    'Netherlands (Kingdom of the)'
     ]
 const asiaCountries = [
     'Afghanistan',
@@ -83,7 +83,7 @@ const asiaCountries = [
     'Israel',
     'Bahrain',
     'Iraq',
-    `Jerusalem (Site proposed by Jordan)`,
+    'Jerusalem (Site proposed by Jordan)',
     'Jordan',
     'Lebanon',
     'Oman',
@@ -93,14 +93,14 @@ const asiaCountries = [
     'Syrian Arab Republic',
     'United Arab Emirates',
     'Yemen',
-    'Russian Federation',
+    'Russian Federation'
 ]
 const americaCountries = [
     'Antigua and Barbuda',
     'Argentina',
     'Barbados',
     'Belize',
-    `Bolivia (Plurinational State of)`,
+    'Bolivia (Plurinational State of)',
     'Brazil',
     'Chile',
     'Colombia',
@@ -123,9 +123,9 @@ const americaCountries = [
     'Saint Lucia',
     'Suriname',
     'Uruguay',
-    `Venezuela (Bolivarian Republic of)`,
+    'Venezuela (Bolivarian Republic of)',
     'United States of America',
-    'Canada',
+    'Canada'
 ]
 const africaCountries = [
     'Angola',
@@ -170,7 +170,7 @@ const africaCountries = [
     'Mauritania',
     'Morocco',
     'Sudan',
-    'Tunisia',
+    'Tunisia'
 ]
 const oceaniaCountries= [
     'Australia',
@@ -188,7 +188,7 @@ const oceaniaCountries= [
     'Nauru',
     'Tuvalu',
     'Tokelau',
-    'Solomon Islands',
+    'Solomon Islands'
 ]
 
 let countriesListFr = [
@@ -197,7 +197,7 @@ let countriesListFr = [
     "Autriche",
     "Biélorussie",
     "Belgique",
-    `Bosnie-et-Herzégovine`,
+    "Bosnie-et-Herzégovine",
     "Bulgarie",
     "Chypre",
     "Tchécoslovaquie",
@@ -207,7 +207,7 @@ let countriesListFr = [
     "Espagne",
     "Finlande",
     "France",
-    `Royaume-Uni et d'Irlande du Nord`,
+    "Royaume-Uni et d'Irlande du Nord",
     "Grèce",
     "Saint-Siège",
     "Hongrie",
@@ -239,6 +239,7 @@ let countriesListFr = [
     "Île de Man",
     "Îles Féroé",
     "Gibraltar",
+    "Pays-Bas",
     "Afghanistan",
     "Azerbaïdjan",
     "Bangladesh",
@@ -309,8 +310,8 @@ let countriesListFr = [
     "Sainte-Lucie",
     "Suriname",
     "Uruguay",
-    `Venezuela (République bolivarienne du)`,
-    `États-Unis d'Amérique`,
+    "Venezuela (République bolivarienne du)",
+    "États-Unis d'Amérique",
     "Canada",
     "Angola",
     "Bénin",
@@ -345,7 +346,7 @@ let countriesListFr = [
     "Afrique du Sud",
     "Togo",
     "Ouganda",
-    `République-Unie de Tanzanie`,
+    "République-Unie de Tanzanie",
     "Zambie",
     "Zimbabwe",
     "Algérie",
@@ -370,7 +371,7 @@ let countriesListFr = [
     "Nauru",
     "Tuvalu",
     "Tokelau",
-    `Îles Salomon`,
+    "Îles Salomon"
 ]
 
 const allCountries = [eruopeCountries, asiaCountries, americaCountries, africaCountries, oceaniaCountries]
@@ -402,9 +403,13 @@ const BTN_NATURAL = document.querySelector('.btnNatural')
 const BTN_MIXED = document.querySelector('.btnMixed')
 
 // latitude de l'utilisateur
-let latitude = 46.519653;
+//let latitude = 46.519653;
 // longitude du user
-let longitude = 6.632273;
+
+//let longitude = 6.632273;
+
+let latitude = 10;
+let longitude = 30
 let zoomMap= 10;
 
 // option de centre de la carte + zoom
@@ -477,37 +482,6 @@ function removeMarks(){
 }
 
 // demande de la localisation au navigateur
-navigator.geolocation.getCurrentPosition(
-    // obtention des positions
-    function (position) {
-        $.getJSON('http://ws.geonames.org/countryCode', {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-            type: 'JSON'
-        }, function(result) {
-            console.log(result.countryName);
-        })
-
-        // obtention de la latitude
-        latitude = position.coords.latitude;
-        // obtention logitude
-        longitude = position.coords.longitude;
-        console.log(`latitude1 :${latitude}`);
-        console.log(`longitude1 :${longitude}`);
-        ZoomArea(latitude, longitude, zoomMap);
-        console.log(position)
-        console.log(position.countryName)
-        markSpotsByCountry(position.countryName)
-    },
-    function (error) {
-        // Gérer les erreurs de géolocalisation ici
-        console.error("Erreur de géolocalisation :", error.message);
-    },
-    // précision de la position
-    { enableHighAccuracy: true }
-   
-);
-
 
 /*
 navigator.geolocation.getCurrentPosition(function(position) {
@@ -711,3 +685,25 @@ function countryButton(obj, name) {
    markSpotsByCountry(obj.id);
 }
      
+
+//Geo
+navigator.geolocation.getCurrentPosition(
+    // obtention des positions
+    function (position) {
+        // obtention de la latitude
+
+        latitude = position.coords.latitude;
+        // obtention logitude
+        longitude = position.coords.longitude;
+        console.log(`latitude1 :${latitude}`);
+        console.log(`longitude1 :${longitude}`);
+        ZoomArea(latitude, longitude, zoomMap);
+        markSpotsByCountry("Switzerland");
+        console.log(position)
+    },
+    function (error) {
+        // Gérer les erreurs de géolocalisation ici
+        console.error("Erreur de géolocalisation :", error.message);
+    },
+    // précision de la position   
+);
