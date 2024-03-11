@@ -1,0 +1,80 @@
+<html lang="fr">
+
+<head>
+  <!--
+        Auteur              : Group2
+        Date                : 15.01.2024
+        Description         : Site Unesco pour I426
+        Modification        : Adrian Toledo
+        Date                : 11.03.2024
+        -->
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <title>Map - Sites Unesco</title>
+</head>
+
+<body>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <header>
+    <img src="../img/BSI_Logo.png" alt="Logo">
+    <nav>
+      <ul>
+        <li><a href="../../index.html">Accueil</a></li>
+        <li><a id="carte" href="/src/html/map.html">Carte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <h1>Voici les différents site de l'UNESCO</h1>
+
+
+  <div class="body-structure">
+    <div class="filter-container">
+
+      <div class="filter-category">
+        <table>
+          <th>Catégorie</th>
+        </table>
+        <button class="btnAllMarks">Tous </button>
+        <button class="btnCultural">Culturel</button>
+        <button class="btnNatural">Natural</button>
+        <button class="btnMixed">Mixte</button>
+        <button class="btnRemove">Aucune</button>
+      </div>
+
+      <div class="filter-continent">
+        <table>
+          <thead>
+            <!--<input id="searchContinent" class="filter" type="text" placeholder="Continents...">-->
+            <th>Continents</th>
+          </thead>
+        </table>
+        <div class="data"></div>
+      </div>
+
+      <div class="filter-country">
+        <tr>
+          <table>
+            <thead>
+              <th>Pays</th>
+            </thead>
+          </table>
+          <input id="searchCountry" class="filter" type="text" placeholder="Pays...">
+          <div class="data2">
+        </tr>
+      </div>
+    </div>
+
+  </div>
+  <div id="map"></div>
+  </div>
+
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="../javascript/scriptMap.js"></script>
+</body>
+
+</html>
