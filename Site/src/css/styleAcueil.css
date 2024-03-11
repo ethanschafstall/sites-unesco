@@ -6,6 +6,8 @@ body {
   flex-direction: column;
   height: 100vh;
   background-color: #9BBCD3;
+ font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 header {
@@ -19,7 +21,7 @@ header {
 }
 
 header img {
-  max-width: 50px; /* Ajustez la largeur maximale de votre logo */
+  max-width: 5px; /* Ajustez la largeur maximale de votre logo */
 }
 
 nav {
@@ -90,10 +92,7 @@ grid-template-areas: "h1 img" "p img" "button img";
 .firstdiv img{
   grid-area: img;
   margin:15px;
-  /*position: absolute;
-  right:0;*/
-  border:solid;
-  border-radius: 0,1px;
+  border:none;
   border-color: #DFE2DB;
 }
 .firstdiv h1{
@@ -104,7 +103,7 @@ text-align: center;
 .firstdiv p{
   grid-area: p;
   margin:5%;
-  font-size: large;
+  font-size: larger;
 }
 .firstdiv button{
   grid-area: button;
@@ -114,7 +113,23 @@ text-align: center;
  /* DETTE TECHNIQUE
  /*justify-self: end;*/
  align-self: flex-start;
-}/*
+}
+nav ul li {
+ margin: auto 15px;
+  font-size: larger;
+
+}
+nav ul li img {
+  width: 4%;
+  height: auto;
+  padding: 0px;
+  border: none;
+}
+footer{
+  margin: auto;
+}
+
+/*
 .seconddiv{
   margin-left:50px;
   margin-right: 50px;
